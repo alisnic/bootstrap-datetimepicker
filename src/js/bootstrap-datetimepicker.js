@@ -741,7 +741,10 @@
                     if (currentDate.day() === 0 || currentDate.day() === 6) {
                         clsName += ' weekend';
                     }
-                    row.append('<td data-action="selectDay" data-day="' + currentDate.format('L') + '" class="day' + clsName + '">' + currentDate.date() + '</td>');
+                    
+                    if (row) {
+                      row.append('<td data-action="selectDay" data-day="' + currentDate.format('L') + '" class="day' + clsName + '">' + currentDate.date() + '</td>');
+                    }
                     currentDate.add(1, 'd');
                 }
 
